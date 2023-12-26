@@ -6,6 +6,7 @@ import RegisterModal from "./components/modal/RegisterModal";
 import ClientOnly from "./components/ClientOnly";
 import ToasterProvider from "./components/providers/ToasterProvider";
 import LoginModal from "./components/modal/LoginModal";
+import getCurrentUser from "./actions/getCurrentUser";
 
 const nunito = Nunito({ subsets: ["latin"] });
 
@@ -14,11 +15,13 @@ export const metadata: Metadata = {
 	description: "Your Instant Travel Companion",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
 	children,
 }: {
 	children: React.ReactNode;
-}) {
+	}) {
+	
+	const currentUser = await getCurrentUser()
 	return (
 		<html lang="en">
 			<body className={nunito.className}>
@@ -26,7 +29,7 @@ export default function RootLayout({
 					<ToasterProvider />
 					<LoginModal />
 					<RegisterModal />
-					<Navbar />
+					<Navbar currentUser={currentUser} />
 				</ClientOnly>
 				{children}
 			</body>
