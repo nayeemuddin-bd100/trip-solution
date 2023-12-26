@@ -5,7 +5,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import prisma from "@/app/libs/prismadb"
 import bcrypt from "bcrypt";
 
-const authOptions: AuthOptions = {
+export const authOptions: AuthOptions = {
 	providers: [
 		GitHubProvider({
 			clientId: process.env.GITHUB_ID as string,
