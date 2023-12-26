@@ -11,9 +11,12 @@ import Heading from "../Heading";
 import Input from "../input/Input";
 import toast from "react-hot-toast";
 import Button from "../Button";
+import { signIn } from "next-auth/react";
+import useLoginModal from "../hooks/useLoginModal";
 
 const RegisterModal = () => {
 	const registerModal = useRegisterModal();
+	const loginModal = useLoginModal();
 	const [isLoading, setIsLoading] = useState(false);
 
 	const {
@@ -33,10 +36,11 @@ const RegisterModal = () => {
 
 		try {
 			await axios.post("/api/register", data);
+			toast.success("Registered!");
 			registerModal.onClose();
-		} catch (error) {
-			console.log(error);
-			toast.error("Something went wrong");
+			loginModal.onOpen();
+		} catch (error:any) {
+			toast.error(error);
 		} finally {
 			setIsLoading(false);
 		}
@@ -87,15 +91,19 @@ const RegisterModal = () => {
 				outline
 				label="Continue with Github"
 				icon={AiFillGithub}
-				onClick={() => {}}
+				onClick={() => signIn("github")}
 			/>
 
 			<div className="text-neutral-500 text-center mt-4 font-light">
 				<div className="flex flex-row items-center justify-center gap-2">
 					<div> Already have an account?</div>
-          <div
-            onClick={registerModal.onClose}
-            className="text-neutral-800 cursor-pointer hover:underline"> Login</div>
+					<div
+						onClick={registerModal.onClose}
+						className="text-neutral-800 cursor-pointer hover:underline"
+					>
+						{" "}
+						Login
+					</div>
 				</div>
 			</div>
 		</div>
