@@ -1,10 +1,13 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
+import dynamic from "next/dynamic";
 import { useMemo, useState } from "react";
 import { FieldValues, useForm } from "react-hook-form";
 import Heading from "../Heading";
 import useRentModal from "../hooks/useRentModal";
 import CategoryInput from "../input/CategoryInput";
+import CountrySelect from "../input/CountrySelect";
 import { categories } from "../navbar/Categories";
 import Modal from "./Modal";
 
@@ -43,16 +46,20 @@ const RentModal = () => {
 		},
 	});
 
-	const category = watch('category')
+	const category = watch("category");
+	const location = watch("location");
+	const Map = useMemo(
+		() => dynamic(() => import("../Map"), { ssr: false }),
+		[location]
+	);
 
-	console.log(category)
-    const setCustomValue = (id:string, value:any) => {
-        setValue(id,value,{
-					shouldValidate: true,
-					shouldDirty: true,
-					shouldTouch: true
-        })
-    }
+	const setCustomValue = (id: string, value: any) => {
+		setValue(id, value, {
+			shouldValidate: true,
+			shouldDirty: true,
+			shouldTouch: true,
+		});
+	};
 	const onBack = () => {
 		setStep((value) => value - 1);
 	};
@@ -98,15 +105,22 @@ const RentModal = () => {
 		</div>
 	);
 
-	if(step === STEPS.LOCATION){
+	if (step === STEPS.LOCATION) {
 		bodyContent = (
 			<div className="flex flex-col gap-8">
 				<Heading
 					title="Where is your place located?"
 					subtitle="Help guests find you!"
 				/>
+				<CountrySelect
+					value={location}
+					onChange={(value) => setCustomValue("location", value)}
+				/>
+				<Map
+					center={location?.latlng}
+				/>
 			</div>
-		)
+		);
 	}
 	return (
 		<div>
