@@ -28,12 +28,12 @@ export default async function RootLayout({
 			<body className={nunito.className}>
 				<ClientOnly>
 					<ToasterProvider />
-					<RentModal/>
+					<RentModal />
 					<LoginModal />
 					<RegisterModal />
 					<Navbar currentUser={currentUser} />
 				</ClientOnly>
-				{children}
+				<div className="pb-20 pt-28">{children}</div>
 			</body>
 		</html>
 	);
