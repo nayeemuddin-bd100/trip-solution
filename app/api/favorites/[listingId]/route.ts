@@ -38,7 +38,7 @@ export const POST = async (request: Request, { params} : {params: IParams}) => {
 }
 
 
-const DELETE = async (request: Request, { params} : {params: IParams}) => {
+export const DELETE = async (request: Request, { params} : {params: IParams}) => {
 
   const currentUser = await getCurrentUser()
 
