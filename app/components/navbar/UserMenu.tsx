@@ -5,10 +5,8 @@ import { signOut } from "next-auth/react";
 import { useCallback, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import Avatar from "../Avatar";
-import useLoginModal from "../hooks/useLoginModal";
-import useRegisterModal from "../hooks/useRegisterModal";
-import useRentModal from "../hooks/useRentModal";
-import MenuItem from "./MenuItem";
+import useLoginModal from "@/app/hooks/useLoginModal";import useRegisterModal from "@/app/hooks/useRegisterModal";
+import useRentModal from "@/app/hooks/useRentModal";import MenuItem from "./MenuItem";
 
 interface UserMenuProps {
 	currentUser?: User | null;

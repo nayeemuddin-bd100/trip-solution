@@ -5,8 +5,7 @@ import dynamic from "next/dynamic";
 import { useMemo, useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import Heading from "../Heading";
-import useRentModal from "../hooks/useRentModal";
-import CategoryInput from "../input/CategoryInput";
+import useRentModal from "@/app/hooks/useRentModal";import CategoryInput from "../input/CategoryInput";
 import Counter from "../input/Counter";
 import CountrySelect from "../input/CountrySelect";
 import ImageUpload from "../input/ImageUpload";
@@ -16,6 +15,7 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import Input from "../input/Input";
+
 
 enum STEPS {
 	CATEGORY = 0,
