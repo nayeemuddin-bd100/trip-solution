@@ -4,6 +4,9 @@ export const getListing = async () => {
 			orderBy: {
 				createdAt: "desc",
 			},
+			include: {
+				user: true,
+			}
 		});
 
 		return listings;
