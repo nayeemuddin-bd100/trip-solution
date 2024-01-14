@@ -85,6 +85,12 @@ const RentModal = () => {
 		if (step !== STEPS.PRICE) {
 			return onNext();
 		}
+
+		 if (!data.imageSrc) {
+				setIsLoading(false);
+				toast.error("Image is required");
+				return; 
+			}
 		setIsLoading(true);
 
 		try {
