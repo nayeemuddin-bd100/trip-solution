@@ -3,10 +3,9 @@ import { authOptions } from "../api/auth/[...nextauth]/route"
 import  prisma  from '@/app/libs/prismadb';
 
 
-export const getSession = async () => {
+export const getSession: () => Promise<any> = async () => {
   return await getServerSession(authOptions)
 }
-
 
 const getCurrentUser = async () => {
   try {
