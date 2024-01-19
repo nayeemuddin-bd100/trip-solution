@@ -58,12 +58,13 @@ const ListingClient = ({
 		setIsLoading(true);
 
 		try {
-			await axios.post("/api/reservations", {
+			const res =await axios.post("/api/reservations", {
 				totalPrice,
 				startDate: dateRange.startDate,
 				endDate: dateRange.endDate,
 				listingId: listing?.id,
 			});
+
 			toast.success("Listing reserved successfully");
 			setDateRange(initialDateRange);
 
