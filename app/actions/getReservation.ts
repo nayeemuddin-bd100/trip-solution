@@ -7,7 +7,7 @@ interface IParams {
   authorId?: string
 }
 
-export const getReservation = async (params:IParams) => {
+export const getReservations = async (params:IParams) => {
 
   try {
     const { listingId, userId, authorId } = params;
@@ -23,7 +23,7 @@ export const getReservation = async (params:IParams) => {
 		}
 
 		if (authorId) {
-			query.authorId = { userId: authorId };
+			query.listing = { userId: authorId };
 		}
 
 		const reservations = await prisma.reservation.findMany({
@@ -45,4 +45,4 @@ export const getReservation = async (params:IParams) => {
   }
 }
 
-export default getReservation;
+export default getReservations;
