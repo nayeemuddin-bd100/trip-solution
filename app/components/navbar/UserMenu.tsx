@@ -7,12 +7,15 @@ import { AiOutlineMenu } from "react-icons/ai";
 import Avatar from "../Avatar";
 import useLoginModal from "@/app/hooks/useLoginModal";import useRegisterModal from "@/app/hooks/useRegisterModal";
 import useRentModal from "@/app/hooks/useRentModal";import MenuItem from "./MenuItem";
+import { useRouter } from "next/navigation";
 
 interface UserMenuProps {
 	currentUser?: User | null;
 }
 
 const UserMenu = ({ currentUser }: UserMenuProps) => {
+
+	const router = useRouter()
 	const [isOpen, setIsOpen] = useState(false);
 	const registerModal = useRegisterModal()
 	const loginModal = useLoginModal()
@@ -57,7 +60,7 @@ const UserMenu = ({ currentUser }: UserMenuProps) => {
 				<div className="absolute rounded-xl shadow-md w-[40vw] md:w-3/4 bg-white overflow-hidden right-0 top-12 text-sm">
 					{currentUser ? (
 						<div>
-							<MenuItem onClick={() => {}} label="My Trips" />
+							<MenuItem onClick={() => {router.push('/trips')}} label="My Trips" />
 							<MenuItem onClick={() => {}} label="My Favorites" />
 							<MenuItem onClick={() => {}} label="My Reservation" />
 							<MenuItem onClick={() => {}} label="My Properties" />
