@@ -8,6 +8,7 @@ import RentModal from "./components/modal/RentModal";
 import Navbar from "./components/navbar/Navbar";
 import ToasterProvider from "./components/providers/ToasterProvider";
 import "./globals.css";
+import SearchModal from "./components/modal/SearchModal";
 
 const nunito = Nunito({ subsets: ["latin"] });
 
@@ -20,14 +21,14 @@ export default async function RootLayout({
 	children,
 }: {
 	children: React.ReactNode;
-	}) {
-	
-	const currentUser = await getCurrentUser()
+}) {
+	const currentUser = await getCurrentUser();
 	return (
 		<html lang="en">
 			<body className={nunito.className}>
 				<ClientOnly>
 					<ToasterProvider />
+					<SearchModal />
 					<RentModal />
 					<LoginModal />
 					<RegisterModal />
