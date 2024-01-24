@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Trip Solution
 
-## Getting Started
+![Trip Solution Logo](./public/images/logo.png)
 
-First, run the development server:
+Trip Solution is a comprehensive Next.js application that simplifies your travel experience by providing a range of features such as user authentication, hotel booking, search functionality, and much more. Built with Next.js 14, Tailwind CSS, Prisma, and TypeScript, this application offers a seamless and responsive user interface.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Live Demo
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Explore Trip Solution live at [https://trip-solution.vercel.app/](https://trip-solution.vercel.app/).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **User Authentication:**
+  - Secure user authentication system for seamless login and logout.
+  - Authorization mechanisms to control access to specific features.
+  
+  - **User Registration:**
+    - Easy registration process for new users.
+    - Secure storage of user credentials.
 
-## Learn More
+  - **Social Logins:**
+    - **Gmail Login:**
+      - Seamless login using Gmail credentials.
+      - Streamlined user experience for Gmail users.
+    
+    - **GitHub Login:**
+      - Quick login using GitHub credentials.
+      - Enhanced security and authentication options for GitHub users.
 
-To learn more about Next.js, take a look at the following resources:
+- **Search Functionality:**
+  - Powerful search capabilities for finding destinations, hotels, and more.
+  - Efficient filtering options to narrow down search results by date, room specifications, guest count, and location.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Hotel Booking:**
+  - Hassle-free hotel booking functionality.
+  - Intuitive user interface for selecting dates and specifying preferences.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- **Hotel Posting:**
+  - Easy posting of hotel listings for property owners.
+  - User-friendly form for providing details about the hotel.
 
-## Deploy on Vercel
+- **Filtering and Sorting:**
+  - Comprehensive filtering options based on various criteria.
+  - Sorting functionality to organize search results.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Date Range Selection:**
+  - Smooth date range selection for booking and searching.
+  - Calendar integration for user convenience.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **Admin Control:**
+  - Administrative capabilities to manage properties.
+  - Ability to add or delete properties.
+
+- **User Trips:**
+  - Users can view a personalized page showcasing their visited destinations.
+  - Access to a dedicated section that displays the places they have traveled to.
+
+- **Reservation History:**
+  - Users have visibility into their reservation history.
+  - Easily track and review details of past reservations.
+
+- **Favorites Page:**
+  - Users can mark properties as favorites.
+  - Access a dedicated favorites page to view and manage selected favorite properties.
+
+## Technologies Used
+
+- Next.js 14: React framework for building modern web applications.
+
+- Tailwind CSS: Utility-first CSS framework for streamlined styling.
+
+- Prisma: Type-safe database access and query building.
+
+- TypeScript: Superset of JavaScript for enhanced code quality and maintainability.
+
+- bcrypt: Library for secure password hashing.
+
+- next-auth: Authentication library for Next.js applications.
+
+- react-hook-form: Efficient library for managing forms in React.
+
+- zustand: Lightweight state management for React.
+
+
